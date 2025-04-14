@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from solana.rpc.api import Client
 from solana.keypair import Keypair
-from solders.pubkey import Pubkey as PublicKey
+from solana.publickey import PublicKey
 from solana.transaction import Transaction, TransactionInstruction
 from solana.system_program import SYS_PROGRAM_ID
 import base58
