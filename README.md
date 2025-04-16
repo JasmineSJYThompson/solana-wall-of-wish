@@ -1,19 +1,27 @@
 # Solana Wall of Wish
 
-A decentralized wish wall application built on the Solana blockchain using Python and Streamlit.
+A decentralized wish wall application built on the Solana blockchain. The program is built and deployed using the Solana Playground, and this repository contains the frontend code to interact with it.
 
 ## Features
 
-- Connect your Solana wallet
-- Submit wishes to the blockchain
-- View recent wishes from other users
-- Decentralized and secure
+- Submit wishes to the Solana blockchain
+- View all wishes stored on-chain
+- Decode and display wish data from the blockchain
+- Simple and intuitive interface
+
+## Project Structure
+
+```
+solana-wall-of-wish/
+├── app.py              # Streamlit frontend application
+├── requirements.txt    # Python dependencies
+└── README.md          # Project documentation
+```
 
 ## Prerequisites
 
 - Python 3.8 or higher
-- Solana wallet (e.g., Phantom, Solflare)
-- Solana CLI tools (optional, for development)
+- Solana Playground account
 
 ## Installation
 
@@ -36,24 +44,35 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Start the Streamlit app:
+1. Deploy your program on the Solana Playground
+2. Start the Streamlit app:
 ```bash
-streamlit run app.py
+streamlit run streamlit_decode_data.py
 ```
+3. Open your browser and navigate to `http://localhost:8501`
+4. Enter your Solana public key and start submitting wishes!
 
-2. Open your browser and navigate to `http://localhost:8501`
+## How It Works
 
-3. Connect your Solana wallet by entering your wallet address
+### Frontend (app.py)
+- Streamlit application for user interaction
+- Simple interface for submitting and viewing wishes
+- Displays decoded wish data from the blockchain
 
-4. Start submitting and viewing wishes!
+### Data Structure
+Each wish is stored on the blockchain with the following structure:
+- Author's public key
+- Timestamp
+- Wish title/content
 
 ## Development
 
-To develop and test the application:
+The Solana program must be built and deployed using the Solana Playground. Follow these steps:
 
-1. Set up a local Solana test validator (optional)
-2. Update the RPC URL in `solana_integration.py` to point to your test validator
-3. Deploy your Solana program and update the `program_id` in `solana_integration.py`
+1. Visit [Solana Playground](https://beta.solpg.io/)
+2. Create a new project
+3. Write and deploy your program
+4. Use the deployed program ID in the frontend application
 
 ## Security
 
