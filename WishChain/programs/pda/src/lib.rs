@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("3JM2D4v3NZL97EPG9u5ViEEp2ZXhkWad1ab56jC7d8vg");
+declare_id!("2NKnWyAWVRtv3Ewd67Ck3zUyxVpiYNNQaTSpWc6WaVTJ");
 
 #[program]
 pub mod pda {
@@ -8,7 +8,7 @@ pub mod pda {
 
     // ctx: Context<Create> provides access to accounts in the Create struct
     pub fn awish(ctx: Context<CreateWish>, title: String) -> Result<()> {
-        msg!("Create Wish {}", title);
+        msg!("Creat e Wish {}", title);
         let account_data = &mut ctx.accounts.wish_account;
         // selects the user field to the public key of the user account
         account_data.user = ctx.accounts.user.key();

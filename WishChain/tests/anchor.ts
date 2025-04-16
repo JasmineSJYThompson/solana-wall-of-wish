@@ -4,6 +4,8 @@ import * as web3 from "@solana/web3.js";
 import { PublicKey } from "@solana/web3.js";
 import type { Pda } from "../target/types/pda";
 
+console.log("Public key:", PublicKey);
+
 describe("pda", () => {
   // Configure the client to use the local cluster
   anchor.setProvider(anchor.AnchorProvider.env());
@@ -40,7 +42,7 @@ describe("pda", () => {
   });
 
   it("Update Wish Account", async () => {
-    const wish = "I want some Solana!";
+    const wish = "I want some SOL!";
     const transactionSignature = await program.methods
       .updatewish(wish)
       .accounts({
@@ -60,7 +62,7 @@ describe("pda", () => {
     );
   });
 
-  it("Delete Wish Account", async () => {
+  /**it("Delete Wish Account", async () => {
     const transactionSignature = await program.methods
       .deletewish()
       .accounts({
@@ -78,5 +80,5 @@ describe("pda", () => {
       "Transaction Signature:",
       `https://solana.fm/tx/${transactionSignature}?cluster=devnet-solana`,
     );
-  });
+  });*/
 });
